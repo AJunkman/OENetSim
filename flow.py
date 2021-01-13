@@ -22,7 +22,7 @@ class Flow(object):
             flow.dataSize = round(random.uniform(0, 100), 3)
         else:
             flow.dataSize = round(random.uniform(100, 10240), 3)
-        return self
+        return flow
 
     # 生成数据流列表，数据流的个数为N
     def CreateFlowList(self, N, r):
