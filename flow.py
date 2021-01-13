@@ -6,22 +6,22 @@ import numpy as np
 
 class Flow(object):
     # @timing_function
-    def __init__(self,src, dst, dataSize, timeStamp):
-        self.src = src
-        self.dst = dst
-        self.dataSize = dataSize
-        self.timeStamp = timeStamp
+    def __init__(self):
+        self.src = int
+        self.dst = int
+        self.dataSize = int
+        self.timeStamp = int
 
     # 生成数据流，r：TOR数量
-    def CreatFlow(self, r):
-        self.timeStamp = random.randint(0, r * (r - 1) / 2 - 1)
-        self.src = random.randint(0, r - 1)
-        self.dst = random.randint(0, r - 1)
+    def CreatFlow(flow, r):
+        flow.timeStamp = random.randint(0, r * (r - 1) / 2 - 1)
+        flow.src = random.randint(0, r - 1)
+        flow.dst = random.randint(0, r - 1)
         P = random.random()
         if P < 0.8:
-            self.dataSize = round(random.uniform(0, 100), 3)
+            flow.dataSize = round(random.uniform(0, 100), 3)
         else:
-            self.dataSize = round(random.uniform(100, 10240), 3)
+            flow.dataSize = round(random.uniform(100, 10240), 3)
         return self
 
     # 生成数据流列表，数据流的个数为N
